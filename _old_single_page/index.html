@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stueam</title>
+    <meta
+      name="description"
+      content="Minimal personal homepage with a click-to-enter entrance and a restrained monochrome portfolio layout."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <main class="shell">
+      <section class="gate" aria-label="Entrance">
+        <div class="gate__backdrop"></div>
+        <div class="gate__inner">
+          <p class="eyebrow">stueam.github.io</p>
+          <h1>stueam</h1>
+          <p class="subtitle">research, machine learning, systems, and the quiet side of the web</p>
+          <button id="enterButton" class="enter" type="button">click to enter</button>
+        </div>
+      </section>
+
+      <section class="content" aria-label="Homepage content">
+        <header class="topline">
+          <div>
+            <p class="eyebrow">portfolio / notes / work</p>
+            <h2>Selected work and current directions</h2>
+          </div>
+          <p class="meta">Tsinghua University · GPA 3.99/4.00 · rank 1/15</p>
+        </header>
+
+        <section class="about">
+          <p>
+            I work at the intersection of machine learning, reinforcement learning,
+            and systems-oriented problem solving. The focus is practical: training
+            loops, careful experimentation, and turning research taste into
+            results people can inspect.
+          </p>
+          <p class="meta">
+            Python · model training · ML / RL foundation · research collaboration
+          </p>
+        </section>
+
+        <section class="grid" aria-label="Selected projects">
+          <article class="item">
+            <p class="item__kicker">SRT</p>
+            <h3>Fracture</h3>
+            <p>
+              Ongoing work in <strong>Desktop/Fracture</strong>, built around a
+              serious technical workflow with clear iteration and measurable
+              outcomes.
+            </p>
+          </article>
+
+          <article class="item">
+            <p class="item__kicker">Project</p>
+            <h3>AgentBench study</h3>
+            <p>
+              A comparison of heuristic learning and reinforcement learning on
+              board-game style settings. Contribution: participant, not lead.
+            </p>
+          </article>
+
+          <article class="item">
+            <p class="item__kicker">Core courses</p>
+            <h3>Programming training</h3>
+            <p>
+              Added <strong>程序设计训练 (Python)</strong> alongside the core
+              technical coursework and practice-heavy problem solving.
+            </p>
+          </article>
+        </section>
+
+        <footer class="footer">
+          <a href="https://github.com/stueam" target="_blank" rel="noreferrer">github.com/stueam</a>
+          <a href="mailto:stueam@example.com">contact</a>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

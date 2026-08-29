@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal homepage template." />
+    <title>stueam | Bojun Yang</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#main" aria-label="Homepage">
+          <span class="brand-mark">NY</span>
+          <span>
+            <strong>stueam</strong>
+            Bojun Yang
+          </span>
+        </a>
+
+        <nav class="top-nav" aria-label="Primary navigation">
+          <button class="nav-tab" type="button" data-route-target="main">Main</button>
+          <button class="nav-tab" type="button" data-route-target="info">Info</button>
+          <button class="nav-tab" type="button" data-route-target="scholar">Scholar</button>
+          <button class="nav-tab" type="button" data-route-target="blog">Blog</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="view-main" class="view" aria-labelledby="main-title">
+        <div class="hero-band">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <h2 class="eyebrow">Hinc ad astra</h2>
+              <h1 id="main-title">Welcome to stueam's homepage</h1>
+              <p id="profile-bio" class="lead">Replace this area with your own introduction.</p>
+              <div id="quick-facts" class="fact-grid" aria-label="Quick facts"></div>
+            </div>
+
+            <aside class="profile-card" aria-label="Profile summary">
+              <div class="portrait-frame">
+                <img src="C:\Users\18041\Desktop\stueam.github.io\data\portrait.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div>
+                <h2 id="profile-name">Your Name</h2>
+                <p id="profile-headline">Short headline placeholder</p>
+              </div>
+              <div id="social-links" class="social-links"></div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="content-band">
+          <div class="section-heading">
+            <p class="eyebrow">Updates</p>
+            <h2>News</h2>
+          </div>
+          <div id="news-list" class="news-list"></div>
+        </div>
+      </section>
+
+      <section id="view-info" class="view" aria-labelledby="info-title" hidden>
+        <div class="content-band resume-layout">
+          <aside class="resume-toc" aria-label="Resume sections">
+            <div class="mini-profile">
+              <div class="mini-profile-placeholder">photo</div>
+              <div>
+                <strong>Your Name</strong>
+                <span>Role or affiliation</span>
+              </div>
+            </div>
+            <nav id="resume-toc-links"></nav>
+          </aside>
+
+          <article class="resume-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Curriculum vitae</p>
+              <h1 id="info-title">Info</h1>
+            </div>
+            <div id="resume-header" class="resume-header"></div>
+            <div id="resume-sections"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-scholar" class="view" aria-labelledby="scholar-title" hidden>
+        <div class="content-band">
+          <div class="section-heading">
+            <p class="eyebrow">Publications</p>
+            <h1 id="scholar-title">Scholar</h1>
+          </div>
+          <div id="paper-list" class="paper-list"></div>
+        </div>
+      </section>
+
+      <section id="view-blog" class="view" aria-labelledby="blog-title" hidden>
+        <div class="content-band">
+          <div class="section-heading">
+            <p class="eyebrow">Writing archive</p>
+            <h1 id="blog-title">Blog</h1>
+          </div>
+
+          <div class="blog-shell">
+            <aside class="blog-sidebar" aria-label="Blog categories">
+              <div id="blog-categories" class="category-list"></div>
+            </aside>
+
+            <div class="blog-main">
+              <div id="blog-list" class="blog-list"></div>
+              <article id="blog-reader" class="blog-reader" hidden>
+                <button id="reader-close" class="icon-button" type="button" aria-label="Close reader">x</button>
+                <div id="reader-meta" class="reader-meta"></div>
+                <div class="reader-layout">
+                  <nav id="reader-toc" class="reader-toc" aria-label="Document table of contents"></nav>
+                  <div id="reader-content" class="reader-content"></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-doc" class="view document-view" aria-labelledby="doc-title" hidden>
+        <div class="doc-band">
+          <article id="doc-reader" class="doc-reader">
+            <header class="doc-header">
+              <button id="doc-back" class="text-button doc-back" type="button">Back</button>
+              <div id="doc-meta" class="doc-meta"></div>
+            </header>
+            <div class="doc-layout">
+              <div id="doc-content" class="reader-content doc-content"></div>
+              <nav id="doc-toc" class="reader-toc doc-toc" aria-label="Document table of contents"></nav>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; <span id="year"></span> stueam</span>
+      <span>yangbj25@mails.tsinghua.edu.cn</span>
+    </footer>
+  </body>
+</html>
