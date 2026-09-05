@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Personal homepage template." />
+    <meta name="description" content="Bojun Yang — undergraduate researcher in AI systems and high-performance computing." />
     <title>stueam | Bojun Yang</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/styles.css" />
@@ -18,13 +18,13 @@
           <span class="brand-mark">NY</span>
           <span>
             <strong>stueam</strong>
-            Bojun Yang
+            <small>Bojun Yang</small>
           </span>
         </a>
 
         <nav class="top-nav" aria-label="Primary navigation">
           <button class="nav-tab" type="button" data-route-target="main">Main</button>
-          <button class="nav-tab" type="button" data-route-target="info">Info</button>
+          <button class="nav-tab" type="button" data-route-target="info">My info</button>
           <button class="nav-tab" type="button" data-route-target="scholar">Scholar</button>
           <button class="nav-tab" type="button" data-route-target="blog">Blog</button>
         </nav>
@@ -44,7 +44,7 @@
 
             <aside class="profile-card" aria-label="Profile summary">
               <div class="portrait-frame">
-                <img src="C:\Users\18041\Desktop\stueam.github.io\data\portrait.jpg" style="width:100%; height:100%; object-fit:cover;">
+                <img id="profile-avatar" src="data/portrait.jpg" alt="Portrait of Bojun Yang" />
               </div>
               <div>
                 <h2 id="profile-name">Your Name</h2>
@@ -53,6 +53,14 @@
               <div id="social-links" class="social-links"></div>
             </aside>
           </div>
+        </div>
+
+        <div class="content-band research-band">
+          <div class="section-heading">
+            <p class="eyebrow">Current work</p>
+            <h2>Research</h2>
+          </div>
+          <div id="research-list" class="research-list"></div>
         </div>
 
         <div class="content-band">
@@ -68,10 +76,10 @@
         <div class="content-band resume-layout">
           <aside class="resume-toc" aria-label="Resume sections">
             <div class="mini-profile">
-              <div class="mini-profile-placeholder">photo</div>
+              <img src="data/portrait.jpg" alt="Portrait of Bojun Yang" />
               <div>
-                <strong>Your Name</strong>
-                <span>Role or affiliation</span>
+                <strong>Bojun Yang</strong>
+                <span>AI Systems · Tsinghua University</span>
               </div>
             </div>
             <nav id="resume-toc-links"></nav>

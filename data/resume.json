@@ -1,6 +1,108 @@
 {
   "name": "Bojun Yang",
   "email": "yangbj25@mails.tsinghua.edu.cn",
-  "affiliation": "",
-  "sections": []
+  "phone": "+86 180 4138 4700",
+  "affiliation": "Department of Computer Science and Technology, Tsinghua University, Beijing, China",
+  "sections": [
+    {
+      "id": "education",
+      "title": "Education",
+      "entries": [
+        {
+          "title": "Tsinghua University",
+          "meta": "Beijing, China",
+          "subtitle": "Dual degree in Computer Science & Technology and Economics & Finance",
+          "date": "Aug. 2025 - Present",
+          "bullets": [
+            "**GPA:** 3.99 / 4.00   **Rank:** 1 / 15",
+            "**Core coursework:** Introduction to High-Performance Computing, Programming Training (Python), Data Structures, Database Systems, Intermediate Microeconomics, Intermediate Macroeconomics, Principles of Accounting."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "industry-experience",
+      "title": "Industry Experience",
+      "entries": [
+        {
+          "title": "AetherHeart (以太之心)",
+          "url": "https://www.aetherheart.com/",
+          "meta": "Shanghai, China",
+          "subtitle": "Agent Researcher — Fracture",
+          "date": "Mar. 2026 - Present",
+          "bullets": [
+            "Study capability gaps between frontier systems and 8B–27B edge models across 6 task categories and 16 benchmarks, with trace-level error analysis and cost-aware evaluation.",
+            "Build reproducible baselines for Qwen3-8B, Qwen3.6-27B, GPT-OSS-120B, Kimi K3, and DeepSeek v4 Pro; record sample-level JSONL traces, token usage, latency, scores, and random seeds.",
+            "Compare few-shot, SkillOpt, LoRA-based SFT, GRPO, and TTT-Discover under frozen splits, multiple seeds, checkpoint recovery, and task-specific evaluators."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-experience",
+      "title": "Research Experience",
+      "entries": [
+        {
+          "title": "Adversarial Agent Arena — Heuristic vs. RL Agents in Games",
+          "meta": "Tsinghua University",
+          "subtitle": "Project Contributor",
+          "date": "Jul. 2026 - Aug. 2026",
+          "bullets": [
+            "Contribute to a game-agnostic benchmark comparing Agent Heuristic Learning and reinforcement-learning agents with fixed seeds, role-swapped matches, replayable traces, win-rate, and Elo reporting.",
+            "Integrate Slime Volleyball as a headless calibration environment with 12-dimensional observations and 8 legal joint actions; isolate policy processes and validate deterministic baseline/random matches."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "honors-awards",
+      "title": "Honors & Awards",
+      "entries": [
+        {
+          "title": "First Prize (National), Chinese Mathematics Competitions for College Students — Non-Mathematics Category",
+          "date": "2025"
+        },
+        {
+          "title": "First Prize (Provincial), National Olympiad in Informatics in Provinces (NOIP)",
+          "date": "2023"
+        }
+      ]
+    },
+    {
+      "id": "leadership-activities",
+      "title": "Leadership & Activities",
+      "entries": [
+        {
+          "title": "Captain, Qingxiemu Volunteer Program; awarded a Special Large-Team Bronze Award",
+          "date": "2025 - 2026"
+        },
+        {
+          "title": "Activity Planning Staff, Tsinghua Student Association for Science & Technology",
+          "date": "2026"
+        },
+        {
+          "title": "Agent Division Staff, Department of Computer Science Student Association for Science & Technology",
+          "date": "2026 - Present"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "entries": [
+        {
+          "title": "Programming & Data",
+          "subtitle": "Python (NumPy, Pandas, scikit-learn, PyTorch), C++, Git, JSON/JSONL pipelines"
+        },
+        {
+          "title": "Machine Learning",
+          "subtitle": "Supervised learning and reinforcement learning foundations; LoRA fine-tuning, SFT, GRPO, reward and evaluation design"
+        },
+        {
+          "title": "AI Systems & HPC",
+          "subtitle": "CUDA, OpenMP, MPI, GPU kernels, CPU/GPU execution models, parallel experiment orchestration, checkpoint recovery"
+        }
+      ]
+    }
+  ]
 }

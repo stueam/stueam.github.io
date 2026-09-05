@@ -1,7 +1,27 @@
 {
   "displayName": "Bojun Yang",
-  "headline": "Department of Computer Science and Technology, Tsinghua University",
-  "bio": "I am Bojun Yang, an undergraduate student in the Department of Computer Science and Technology at Tsinghua University.",
-  "quickFacts": ["B.Eng. in CS & B.A. in Economics and Finance (Double Major), Tsinghua University, expected 2029", "GPA: 3.99 / 4.0; Rank: 1 / 15"],
-  "socials": []
+  "handle": "stueam",
+  "avatar": "data/portrait.jpg",
+  "headline": "Undergraduate in Tsinghua University",
+  "affiliation": "Department of Computer Science and Technology, Tsinghua University",
+  "location": "Beijing, China",
+  "email": "yangbj25@mails.tsinghua.edu.cn",
+  "phone": "+86 180 4138 4700",
+  "bio": "I am Bojun Yang, an undergraduate student at Tsinghua University pursuing a dual degree in Computer Science and Technology and Economics & Finance.",
+  "quickFacts": [
+    "B.Eng. in Computer Science & Technology and B.A. in Economics & Finance, expected 2029",
+    "GPA 3.99 / 4.0; ranked 1 / 15"
+  ],
+  "socials": [
+    {
+      "label": "Email",
+      "url": "mailto:yangbj25@mails.tsinghua.edu.cn",
+      "icon": "mail"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/stueam",
+      "icon": "github"
+    }
+  ]
 }

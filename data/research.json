@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Fracture",
+    "subtitle": "Model capability gaps, post-training, and cost-aware evaluation",
+    "date": "Mar. 2026 - Present",
+    "body": "A two-stage study of frontier versus 8B–27B edge models across 6 task categories and 16 benchmarks, comparing few-shot, SkillOpt, SFT, GRPO, and TTT-Discover with reproducible traces and cost ledgers.",
+    "tags": ["Model Evaluation", "SFT / GRPO", "Frontier Model"],
+    "url": "https://github.com/AetherHeart-AI/Fracture"
+  },
+  {
+    "title": "Adversarial Agent Arena",
+    "subtitle": "Heuristic vs. reinforcement-learning agents in games",
+    "date": "Jul. 2026 - Aug. 2026",
+    "body": "A game-agnostic evaluation framework comparing heuristic-learning and RL agents through fixed seeds, role-swapped matches, replayable traces, win-rate/Elo reporting, and a headless Slime Volleyball calibration environment.",
+    "tags": ["Agent Evaluation", "Game AI", "Reinforcement Learning"],
+    "url": "https://github.com/stueam/AgentBench"
+  }
+]
