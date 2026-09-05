@@ -274,6 +274,14 @@ button {
   border: 1px solid var(--line);
 }
 
+.portrait-frame img,
+.mini-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .portrait-placeholder {
   width: 100%;
   height: 100%;
@@ -335,6 +343,7 @@ button {
 }
 
 .news-item,
+.research-item,
 .paper-item,
 .blog-item,
 .resume-entry {
@@ -346,6 +355,76 @@ button {
   display: grid;
   grid-template-columns: 140px minmax(0, 1fr);
   gap: 1rem;
+}
+
+.research-list {
+  display: grid;
+  gap: 0;
+}
+
+.research-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.research-main {
+  min-width: 0;
+}
+
+.research-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.research-kicker {
+  margin: 0 0 0.2rem;
+  color: var(--accent-2);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.research-item h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.research-item time {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.research-item p:not(.research-kicker) {
+  max-width: 820px;
+  margin: 0.55rem 0 0;
+  color: #c6d4e6;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.research-tags span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.research-link {
+  flex: 0 0 auto;
 }
 
 .resume-layout {
@@ -395,6 +474,16 @@ button {
   gap: 0.7rem 1rem;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.resume-contact a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.resume-contact a:hover,
+.resume-contact a:focus-visible {
+  color: var(--ink);
 }
 
 .resume-section {
@@ -583,6 +672,7 @@ button {
   }
 
   .news-item,
+  .research-item,
   .paper-item,
   .blog-item,
   .entry-topline,
@@ -590,5 +680,10 @@ button {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .research-topline {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 }

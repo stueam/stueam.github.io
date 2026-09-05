@@ -2,6 +2,7 @@
 const state = {
   profile: null,
   resume: null,
+  research: [],
   news: [],
   papers: [],
   blog: [],
@@ -25,9 +26,10 @@ async function init() {
   bindNavigation();
   bindReader();
 
-  const [profile, resume, news, papers, blog] = await Promise.all([
+  const [profile, resume, research, news, papers, blog] = await Promise.all([
     getJson("data/profile.json", {}),
     getJson("data/resume.json", {}),
+    getJson("data/research.json", []),
     getJson("data/news.json", []),
     getJson("data/papers.json", { papers: [] }),
     getJson("data/blog-index.json", { entries: [] })
@@ -35,11 +37,13 @@ async function init() {
 
   state.profile = profile;
   state.resume = resume;
+  state.research = Array.isArray(research) ? research : [];
   state.news = Array.isArray(news) ? news : [];
   state.papers = Array.isArray(papers) ? papers : papers.papers || [];
   state.blog = Array.isArray(blog.entries) ? blog.entries : [];
 
   renderProfile();
+  renderResearch();
   renderNews();
   renderResume();
   renderPapers();
@@ -103,6 +107,8 @@ function renderProfile() {
   $("#profile-name").textContent = profile.displayName || "Your Name";
   $("#profile-headline").textContent = profile.headline || "Short headline placeholder";
   $("#profile-bio").textContent = profile.bio || "Replace this area with your own introduction.";
+  const avatar = $("#profile-avatar");
+  if (avatar && profile.avatar) avatar.src = profile.avatar;
 
   const quickFacts = Array.isArray(profile.quickFacts) ? profile.quickFacts : [];
   $("#quick-facts").innerHTML = quickFacts.length
@@ -118,6 +124,36 @@ function renderProfile() {
         )
         .join("")
     : emptyState("Add social links in data/profile.json");
+}
+
+function renderResearch() {
+  const target = $("#research-list");
+  if (!target) return;
+  if (!state.research.length) {
+    target.innerHTML = emptyState("Add research entries in data/research.json");
+    return;
+  }
+
+  target.innerHTML = state.research
+    .map(
+      (item) => `
+        <article class="research-item">
+          <div class="research-main">
+            <div class="research-topline">
+              <div>
+                <p class="research-kicker">${escapeHtml(item.subtitle || "Research project")}</p>
+                <h3>${escapeHtml(item.title || "Untitled project")}</h3>
+              </div>
+              <time>${escapeHtml(item.date || "")}</time>
+            </div>
+            <p>${escapeHtml(item.body || "")}</p>
+            ${(item.tags || []).length ? `<div class="research-tags">${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
+          </div>
+          ${item.url ? `<a class="text-button research-link" href="${escapeAttr(item.url)}" target="_blank" rel="noreferrer">Project</a>` : ""}
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderNews() {
@@ -150,7 +186,8 @@ function renderResume() {
     <h2>${escapeHtml(resume.name || "Your Name")}</h2>
     <div class="resume-contact">
       <span>${escapeHtml(resume.affiliation || "Affiliation placeholder")}</span>
-      <span>${escapeHtml(resume.email || "email@example.com")}</span>
+      <a href="mailto:${escapeAttr(resume.email || "")}">${escapeHtml(resume.email || "email@example.com")}</a>
+      ${resume.phone ? `<a href="tel:${escapeAttr(resume.phone.replace(/\s+/g, ""))}">${escapeHtml(resume.phone)}</a>` : ""}
     </div>
   `;
 
@@ -176,17 +213,20 @@ function renderResume() {
 
 function renderResumeEntry(entry) {
   const bullets = Array.isArray(entry.bullets) ? entry.bullets : [];
+  const title = entry.url
+    ? `<a href="${escapeAttr(entry.url)}" target="_blank" rel="noreferrer">${escapeHtml(entry.title || "Entry title")}</a>`
+    : escapeHtml(entry.title || "Entry title");
   return `
     <article class="resume-entry">
       <div class="entry-topline">
-        <h3>${escapeHtml(entry.title || "Entry title")}</h3>
+        <h3>${title}</h3>
         <time>${escapeHtml(entry.date || "")}</time>
       </div>
       <div class="entry-subline">
-        <span>${escapeHtml(entry.subtitle || "")}</span>
-        <span>${escapeHtml(entry.meta || "")}</span>
+        ${entry.subtitle ? `<span>${renderInline(entry.subtitle)}</span>` : ""}
+        ${entry.meta ? `<span>${escapeHtml(entry.meta)}</span>` : ""}
       </div>
-      ${bullets.length ? `<ul>${bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
+      ${bullets.length ? `<ul>${bullets.map((item) => `<li>${renderInline(item)}</li>`).join("")}</ul>` : ""}
     </article>
   `;
 }
@@ -310,6 +350,18 @@ function renderDoc(entryId) {
     : emptyState("This document does not exist yet.");
 
   $("#doc-toc").innerHTML = entry ? emptyState("Add headings when document rendering is connected.") : "";
+}
+
+function renderInline(value) {
+  return simpleInline(String(value ?? ""));
+}
+
+function simpleInline(value) {
+  return escapeHtml(value)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/`(.+?)`/g, "<code>$1</code>")
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
 }
 
 function emptyState(message) {
