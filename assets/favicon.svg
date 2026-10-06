@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#c83228"/>
-  <text x="32" y="39" text-anchor="middle" font-size="24" font-family="Georgia, serif" fill="#fffdf7">HT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">NY — Nick Yang</title>
+  <rect width="64" height="64" rx="12" fill="#163b69"/>
+  <path fill="#f4f7fc" d="M8 46V18h6l11 17V18h6v28h-6L14 29v17Z M33 18h7l5 10 5-10h7L48 35v11h-6V35Z"/>
 </svg>

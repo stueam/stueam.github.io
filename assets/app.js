@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   $("#year").textContent = new Date().getFullYear();
+  initVisitorCount();
   bindNavigation();
   bindReader();
 
@@ -50,6 +51,27 @@ async function init() {
   renderCategories();
   renderBlogList();
   updateRoute();
+}
+
+function initVisitorCount() {
+  // Keep local previews from contributing to shared development-host counts.
+  if (window.location.hostname !== "stueam.github.io") return;
+
+  const stats = $("#visitor-stats");
+  const observer = new MutationObserver(() => {
+    const values = $$(".visitor-count", stats);
+    if (values.every((value) => /^\d+$/.test(value.textContent.trim()))) {
+      stats.hidden = false;
+      observer.disconnect();
+    }
+  });
+  observer.observe(stats, { childList: true, subtree: true, characterData: true });
+
+  const script = document.createElement("script");
+  script.src = "https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js";
+  script.async = true;
+  script.onerror = () => observer.disconnect();
+  document.head.appendChild(script);
 }
 
 async function getJson(url, fallback) {

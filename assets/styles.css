@@ -614,11 +614,25 @@ button {
 .site-footer {
   padding: 1.4rem 0 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.visitor-stats {
+  white-space: nowrap;
+}
+
+.visitor-stats > span + span {
+  margin-left: 0.85rem;
+}
+
+.visitor-count {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 860px) {
